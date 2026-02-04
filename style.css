@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #1e293b;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.book-card {
+  background: white;
+  width: 260px;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.book-card h2 {
+  margin-top: 0;
+}
+
+.buy-btn {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+  background: #22c55e;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.buy-btn:hover {
+  background: #16a34a;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #e5e7eb;
+}
