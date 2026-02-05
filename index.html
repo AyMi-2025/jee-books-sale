@@ -1,135 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>JEE Books for Sale</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Books Store - Quality Used Books</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                    <div>
+                        <h1>JEE Books Store</h1>
+                        <p class="subtitle">Quality used books at great prices</p>
+                    </div>
+                </div>
+                <div class="header-contact">
+                    <svg class="phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span>Contact via WhatsApp</span>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <header>
-    <h1>📚 2nd HAND JEE Books for SALE</h1>
-    <p>Second-hand JEE books in good condition</p>
-  </header>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search by book title or author..."
+                        class="search-input"
+                    >
+                </div>
 
-  <section class="books">
+                <!-- Subject Filter -->
+                <div class="filter-container">
+                    <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                    </svg>
+                    <span class="filter-label">Filter by subject:</span>
+                    <div class="filter-buttons" id="filterButtons">
+                        <button class="filter-btn active" data-subject="All">All</button>
+                        <button class="filter-btn" data-subject="Physics">Physics</button>
+                        <button class="filter-btn" data-subject="Chemistry">Chemistry</button>
+                        <button class="filter-btn" data-subject="Mathematics">Mathematics</button>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Book 1 -->
-    <div class="book-card">
-      <h2>HC Verma – Vol 1</h2>
-      <p><strong>Condition:</strong> Very Good</p>
-      <p><strong>Price:</strong> ₹ NOT DECIDED </p>
-      <a class="buy-btn" 
-         href="https://wa.me/91+ 8981641447?text=I want to buy HC Verma Vol 1"
-         target="_blank">
-         Contact on WhatsApp
-      </a>
-    </div>
+            <!-- Books Grid -->
+            <div id="booksGrid" class="books-grid">
+                <!-- Books will be dynamically inserted here -->
+            </div>
 
-    <!-- Book 2 -->
-    <div class="book-card">
-      <h2>HC Verma – Vol 2</h2>
-      <p><strong>Condition:</strong> Very Good</p>
-      <p><strong>Price:</strong> ₹ NOT DECIDED</p>
-      <a class="buy-btn" 
-         href="https://wa.me/8981641447?text=I want to buy HC Verma – Vol 2"
-         target="_blank">
-         Contact on WhatsApp
-      </a>
-    </div>
+            <!-- No Results Message -->
+            <div id="noResults" class="no-results" style="display: none;">
+                <svg class="no-results-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                <p>No books found matching your criteria</p>
+            </div>
 
-     <!-- Book 2 -->
-    <div class="book-card">
-      <h2>HC Verma – Vol 2</h2>
-      <p><strong>Condition:</strong> Very Good</p>
-      <p><strong>Price:</strong> ₹ NOT DECIDED</p>
-      <a class="buy-btn" 
-         href="https://wa.me/8981641447?text=I want to buy HC Verma – Vol 2"
-         target="_blank">
-         Contact on WhatsApp
-      </a>
-    </div>
+            <!-- How to Buy Section -->
+            <div class="info-section">
+                <h2>How to Buy</h2>
+                <ol class="steps-list">
+                    <li>
+                        <span class="step-number">1.</span>
+                        <span>Browse through the available books and find what you need</span>
+                    </li>
+                    <li>
+                        <span class="step-number">2.</span>
+                        <span>Click "Message on WhatsApp" on any book you're interested in</span>
+                    </li>
+                    <li>
+                        <span class="step-number">3.</span>
+                        <span>Chat with me to confirm availability and arrange payment & delivery</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </main>
 
-     <!-- Book 2 -->
-    <div class="book-card">
-      <h2>HC Verma – Vol 2</h2>
-      <p><strong>Condition:</strong> Very Good</p>
-      <p><strong>Price:</strong> ₹ NOT DECIDED</p>
-      <a class="buy-btn" 
-         href="https://wa.me/8981641447?text=I want to buy HC Verma – Vol 2"
-         target="_blank">
-         Contact on WhatsApp
-      </a>
-    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>All books are used but in good condition. Prices are negotiable!</p>
+            <p class="footer-copyright">© 2026 JEE Books Store - Helping students succeed</p>
+        </div>
+    </footer>
 
-     <!-- Book 2 -->
-    <div class="book-card">
-      <h2>HC Verma – Vol 2</h2>
-      <p><strong>Condition:</strong> Very Good</p>
-      <p><strong>Price:</strong> ₹ NOT DECIDED</p>
-      <a class="buy-btn" 
-         href="https://wa.me/8981641447?text=I want to buy HC Verma – Vol 2"
-         target="_blank">
-         Contact on WhatsApp
-      </a>
-    </div>
-
-     <!-- Book 2 -->
-    <div class="book-card">
-      <h2>HC Verma – Vol 2</h2>
-      <p><strong>Condition:</strong> Very Good</p>
-      <p><strong>Price:</strong> ₹ NOT DECIDED</p>
-      <a class="buy-btn" 
-         href="https://wa.me/8981641447?text=I want to buy HC Verma – Vol 2"
-         target="_blank">
-         Contact on WhatsApp
-      </a>
-    </div>
-
-
-   <!-- Book 2 -->
-    <div class="book-card">
-      <h2>HC Verma – Vol 2</h2>
-      <p><strong>Condition:</strong> Very Good</p>
-      <p><strong>Price:</strong> ₹ NOT DECIDED</p>
-      <a class="buy-btn" 
-         href="https://wa.me/8981641447?text=I want to buy HC Verma – Vol 2"
-         target="_blank">
-         Contact on WhatsApp
-      </a>
-    </div>
-
-
-     <!-- Book 2 -->
-    <div class="book-card">
-      <h2>HC Verma – Vol 2</h2>
-      <p><strong>Condition:</strong> Very Good</p>
-      <p><strong>Price:</strong> ₹ NOT DECIDED</p>
-      <a class="buy-btn" 
-         href="https://wa.me/8981641447?text=I want to buy HC Verma – Vol 2"
-         target="_blank">
-         Contact on WhatsApp
-      </a>
-    </div>
-
-
-     <!-- Book 2 -->
-    <div class="book-card">
-      <h2>HC Verma – Vol 2</h2>
-      <p><strong>Condition:</strong> Very Good</p>
-      <p><strong>Price:</strong> ₹ NOT DECIDED</p>
-      <a class="buy-btn" 
-         href="https://wa.me/8981641447?text=I want to buy HC Verma – Vol 2"
-         target="_blank">
-         Contact on WhatsApp
-      </a>
-    </div>
-
-  </section>
-
-  <footer>
-    <p>📞 Contact: ayanmaiti558@gmail.com</p>
-  </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
