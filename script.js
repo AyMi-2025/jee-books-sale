@@ -3,8 +3,8 @@
 // ====================================
 
 // Your WhatsApp number (format: country code + number, no spaces or +)
-// Example: For India +91 8981641447, use "919876543210"
-const WHATSAPP_NUMBER = "918981641447";
+// Example: For India +91 9876543210, use "919876543210"
+const WHATSAPP_NUMBER = "919876543210";
 
 // Your Books Data - Replace this with your actual books
 const BOOKS_DATA = [
@@ -97,26 +97,6 @@ const BOOKS_DATA = [
         originalPrice: 990,
         sellingPrice: 500,
         image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
-    },
-    {
-        id: 10,
-        title: "PW Class 11th Full (PCM) JEE Module (15 Books)",
-        author: "Physics Wallah",
-        subject: "Physics , Chemistry , Mathematics",
-        condition: "Good",
-        originalPrice: 990,
-        sellingPrice: 500,
-        image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
-    },
-    {
-        id: 11,
-        title: "PW Class 12th Full (PCM) JEE Module (15 Books)",
-        author: "Physics Wallah",
-        subject: "Physics , Chemistry , Mathematics",
-        condition: "Good",
-        originalPrice: 990,
-        sellingPrice: 500,
-        image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
     }
 ];
 
@@ -201,7 +181,10 @@ function createBookCard(book) {
     return `
         <div class="book-card">
             <div class="book-image-container">
-                <img src="${book.image}" alt="${book.title}" class="book-image">
+                <img src="${book.image}" 
+                     alt="${book.title}" 
+                     class="book-image" 
+                     onclick="openLightbox('${book.image}', '${book.title.replace(/'/g, "\\'")} by ${book.author.replace(/'/g, "\\'")}')">
                 <div class="book-subject-badge">${book.subject}</div>
             </div>
             <div class="book-details">
@@ -232,7 +215,56 @@ function createBookCard(book) {
 
 // Open WhatsApp with pre-filled message
 function openWhatsApp(book) {
-    const message = `Hi! I'm interested in buying "${book.title}" by ${book.author}`;
+    const message = `Hi! I'm interested in buying "${book.title}" by ${book.author} for ₹${book.sellingPrice}`;
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }
+
+// Lightbox functionality
+function openLightbox(imageSrc, caption) {
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImg = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    
+    lightbox.style.display = 'block';
+    lightboxImg.src = imageSrc;
+    lightboxCaption.textContent = caption;
+    
+    // Prevent body scroll when lightbox is open
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('imageLightbox');
+    lightbox.style.display = 'none';
+    
+    // Restore body scroll
+    document.body.style.overflow = 'auto';
+}
+
+// Close lightbox when clicking outside the image or on close button
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('imageLightbox');
+    const closeBtn = document.querySelector('.lightbox-close');
+    
+    // Close on X button click
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeLightbox);
+    }
+    
+    // Close on background click
+    if (lightbox) {
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    }
+    
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        }
+    });
+});
