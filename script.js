@@ -262,7 +262,7 @@ function closeLightbox() {
     document.body.style.overflow = 'auto';
 }
 
-// Close lightbox when clicking outside the image or on close button
+// Setup lightbox close events and dark mode
 document.addEventListener('DOMContentLoaded', function() {
     const lightbox = document.getElementById('imageLightbox');
     const closeBtn = document.querySelector('.lightbox-close');
@@ -287,6 +287,24 @@ document.addEventListener('DOMContentLoaded', function() {
             closeLightbox();
         }
     });
+    
+    // Dark Mode Toggle - ADDED HERE
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    
+    // Check for saved dark mode preference
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+    }
+    
+    // Toggle dark mode on button click
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark);
+        });
+    }
 });
 
 // Dark Mode Toggle
