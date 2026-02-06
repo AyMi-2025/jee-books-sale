@@ -215,7 +215,7 @@ function createBookCard(book) {
 
 // Open WhatsApp with pre-filled message
 function openWhatsApp(book) {
-    const message = `Hi! I'm interested in buying "${book.title}" by ${book.author} its listed price on the website is ₹${book.sellingPrice`;
+    const message = `Hi! I'm interested in buying "${book.title}" by ${book.author} for ₹${book.sellingPrice}`;
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }
