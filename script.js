@@ -160,33 +160,33 @@ const BOOKS_DATA = [
     },
     {
         id: 16,
-        title: "47 Chapterwise & Topicwise JEE Main & Advanced PHYSICS PYQs (2013 - 2024)",
+        title: "Chapterwise & Topicwise JEE Main & Advanced PHYSICS PYQs (2013 - 2024)",
         author: "Disha",
         subject: "Physics",
         condition: "Good",
         originalPrice: 990,
         sellingPrice: 500,
-        image: "My files/Play files/Pictures/Telegram/IMG_20260206_112729_589.jpg"
+        image: "IMG_20260206_112729_589.jpg"
     },
     {
         id: 17,
-        title: "47 Chapterwise & Topicwise JEE Main & Advanced CHEMISTRY PYQs (2013 - 2024)",
+        title: "Chapterwise & Topicwise JEE Main & Advanced CHEMISTRY PYQs (2013 - 2024)",
         author: "Disha",
         subject: "Chemistry",
         condition: "Good",
         originalPrice: 990,
         sellingPrice: 500,
-        image: "My files/Play files/Pictures/Telegram/IMG_20260206_112729_589.jpg"
+        image: "IMG_20260206_112729_589.jpg"
     },
     {
         id: 18,
-        title: "47 Chapterwise & Topicwise JEE Main & Advanced MATHEMATICS PYQs (2013 - 2024)",
+        title: "Chapterwise & Topicwise JEE Main & Advanced MATHEMATICS PYQs (2013 - 2024)",
         author: "Disha",
         subject: "Mathematics",
         condition: "Good",
         originalPrice: 990,
         sellingPrice: 500,
-        image: "My files/Play files/Pictures/Telegram/IMG_20260206_112729_589.jpg"
+        image: "IMG_20260206_112729_589.jpg"
     }
 ];
 
