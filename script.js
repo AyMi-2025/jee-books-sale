@@ -97,6 +97,26 @@ const BOOKS_DATA = [
         originalPrice: 990,
         sellingPrice: 500,
         image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
+    },
+    {
+        id: 10,
+        title: "PW Class 11th JEE (15 Modules)",
+        author: "Physics Wallah",
+        subject: "Physics, Chemistry, Mathematics",
+        condition: "Good",
+        originalPrice: 990,
+        sellingPrice: 500,
+        image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
+    },
+    {
+        id: 11,
+        title: "PW Class 12th JEE (15 Modules)",
+        author: "Physics Wallah",
+        subject: "Physics, Chemistry, Mathematics",
+        condition: "Good",
+        originalPrice: 990,
+        sellingPrice: 500,
+        image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
     }
 ];
 
