@@ -16,7 +16,7 @@ const BOOKS_DATA = [
         condition: "Good - Minimal highlighting",
         originalPrice: 850,
         sellingPrice: 400,
-        image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=500&fit=crop"
+        image: "https://www.onetouchbook.com/cdn/shop/files/4ujgh-512.webp?v=1719127969"
     },
     {
         id: 2,
